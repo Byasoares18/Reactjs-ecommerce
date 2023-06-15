@@ -20,9 +20,9 @@ const NavBar = () => {
             <NavDropdown.Item href="#action/3.1">Aros</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
                 Anillos
-</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Collares</NavDropdown.Item>
-<NavDropdown.Item href="#action/3.4">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Collares</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">
                 Pulseras
               </NavDropdown.Item>
               
