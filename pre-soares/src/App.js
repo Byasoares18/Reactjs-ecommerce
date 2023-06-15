@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer gretting={'Platas de qualidad'}/>
+      <ItemListContainer gretting={'Bienvenido a mi tienda'}/>
       <CartWidget/>
     </div>
   );
