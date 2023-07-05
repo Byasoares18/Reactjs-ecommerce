@@ -2,16 +2,21 @@ import cart from "./assets/cart.png"
 
 const styles = {
     img: {
-    heigth: "2rem",
-    width:"auto",
+    heigth: "1rem",
+    width:"1rem",
+    
 
+    },
+    span:{
+    margin:"1rem",
+    padding: 10,
     },
 }
 
 export const CartWidget = () =>(
     <>
     <img src={cart} style={styles.img} alt="CartWidget" />
-    <span>0</span>
+    <span style={styles.span}>0</span> 
     </>
 )     
 
