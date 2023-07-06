@@ -18,7 +18,7 @@ function NavBar() {
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Contacto</Nav.Link>
               <NavDropdown title="Productos" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Aros</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Aros </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Anillos
                 </NavDropdown.Item>
