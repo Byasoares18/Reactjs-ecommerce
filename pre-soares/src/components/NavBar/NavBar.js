@@ -106,32 +106,3 @@ const NavBar = () => {
 export default NavBar;
 
 
-// const NavBar = () => {
-//   return (
-//     <nav className="NavBar">
-//       <div className="Logo">
-//         <Link to="/">Venus Platas</Link>
-//       </div>
-//       <ul className="NavLinks">
-//         <li>
-//           <Link to="/">Home</Link>
-//         </li>
-//         <li>
-//           <Link to="/category/category1">Aros</Link>
-//         </li>
-//         <li>
-//           <Link to="/category/category2">Anillos</Link>
-//         </li>
-//         <li>
-//           <Link to="/category/category3">Collares</Link>
-//         </li>
-//         <li>
-//           <Link to="/category/category4">Pulseras</Link>
-//         </li>
-//       </ul>
-//       <CartWidget />
-//     </nav>
-//   );
-// };
-
-// export default NavBar;

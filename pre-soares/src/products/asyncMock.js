@@ -1,3 +1,7 @@
+import img1 from '../products/img1.jpg'
+import img2 from '../products/img2.jpg'
+import img3 from '../products/img3.jpg'
+import img4 from '../products/img4.jpg'
 
 
 export const getProductsByCategory = (category) => {
@@ -15,7 +19,7 @@ const products = [
     name: 'Product 1',
     price: 1000,
     category: 'category1',
-    img: require('./products/img2.jpg').default,
+    img: img1,
     stock: 10,
     },
     {
@@ -23,7 +27,7 @@ const products = [
     name: 'Product 2',
     price: 2000,
     category: 'category2',
-    img: require('../src/products/img1.jpg').default,
+    img: img2,
     stock: 5,
       
     },
@@ -32,7 +36,7 @@ const products = [
     name: 'Product 3',
     price: 1500,
     category: 'category3',
-    img: require('./products/img3.jpg').default,
+    img: img3,
     stock: 8,
     },
     {
@@ -40,9 +44,9 @@ const products = [
         name: 'Product 4',
         price: 1500,
         category: 'category4',
-        img: require('./products/img4.jpg').default,
+        img: img4,
         stock: 8,
-      },
+    },
   ];
   
     export const getProductById = (id) => {
