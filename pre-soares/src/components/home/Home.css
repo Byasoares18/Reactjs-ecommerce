@@ -1,0 +1,11 @@
+.ImageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .ProductImage {
+    flex: 0 0 calc(25% - 20px); /* Ajuste a largura das imagens e o espaçamento entre elas conforme necessário */
+    margin: 10px;
+  }
+  

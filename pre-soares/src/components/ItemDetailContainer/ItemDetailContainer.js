@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import { getProductById } from "../../products/asyncMock";
 import { useParams } from "react-router-dom";
@@ -21,9 +22,19 @@ const ItemDetailContainer = () => {
     fetchProduct();
   }, [itemId]);
 
+  if (!product) {
+    return <div>Loading...</div>; 
+  }
+
   return (
     <div className="ItemDetailContainer">
-      <ItemDetail {...product} />
+      <ItemDetail
+        id={product.id}
+        name={product.name}
+        img={product.img}
+        price={product.price}
+        stock={product.stock}
+      />
     </div>
   );
 };

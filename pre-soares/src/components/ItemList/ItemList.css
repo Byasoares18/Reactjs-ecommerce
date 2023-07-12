@@ -1,0 +1,11 @@
+.ListGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .CardItem {
+    width: 300px;
+    margin: 10px;
+  }
+  

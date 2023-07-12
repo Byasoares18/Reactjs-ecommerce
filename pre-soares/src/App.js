@@ -16,8 +16,9 @@ function App() {
       <div className="App">
         <NavBar />
         <Routes>
+          
           <Route path="/" element={<ItemListContainer greeting="Bienvenido a mi tienda"  />} /> 
-          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenido a mi tienda"   />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting=""   />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

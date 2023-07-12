@@ -1,12 +1,15 @@
 import React from "react";
 
-const ItemDetail = ({ id, name, price, img, stock }) => {
+const ItemDetail = ({ product }) => {
+  if (!product){
+    return <div> Loading...</div>
+  }
   return (
     <div>
-      <img src={img} alt={name} />
-      <h2>{name}</h2>
-      <p>Price: ${price}</p>
-      <p>Stock: {stock}</p>
+      <img src={product.img} alt={product.name} />
+      <h2>{product.name}</h2>
+      <p>Price: ${product.price}</p>
+      <p>Stock: {product.stock}</p>
     </div>
   );
 };
