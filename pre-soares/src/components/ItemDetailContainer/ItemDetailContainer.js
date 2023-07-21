@@ -1,14 +1,16 @@
-
-
 import React, { useState, useEffect } from "react";
 import { getProductById } from "../../products/asyncMock";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../ItemDetail/ItemDetail";
+// import ItemCount from "../ItemCount/ItemCount";
+
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const { itemId } = useParams();
-
+  const addItem = (item, quantity) => {
+    console.log("Item agregado:", item, "cantidad:", quantity);
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -34,7 +36,13 @@ const ItemDetailContainer = () => {
         img={product.img}
         price={product.price}
         stock={product.stock}
+        addItem={addItem}
       />
+      {/* <ItemCount
+        stock={product.stock}
+        initial={1}
+        onAdd={(quantity) => addItem(product, quantity)}
+      /> */}
     </div>
   );
 };

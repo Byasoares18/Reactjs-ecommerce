@@ -1,31 +1,31 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import NotFound from './components/NotFound/NotFound';
-import ItemCount from './components/ItemCount/ItemCount';
-
-
-
+import { Home } from './components/Home/Home';
+import Cart from './components/Cart/Cart';
+import { CartProvider } from './components/context/CartContext';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          
-          <Route path="/" element={<ItemListContainer greeting="Bienvenido a mi tienda"  />} /> 
-          <Route path="/category/:categoryId" element={<ItemListContainer greeting=""   />} />
-          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada', quantity)} />
-      </div>
-    </Router>
+    <div className="App">
+      <CartProvider>
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/category/:categoryId' element={<ItemListContainer />} />
+            <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </Router>
+      </CartProvider>
+    </div>
   );
 }
 
 export default App;
+

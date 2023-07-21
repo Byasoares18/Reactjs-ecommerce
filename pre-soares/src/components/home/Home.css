@@ -1,11 +1,20 @@
-.ImageContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+   
   }
   
-  .ProductImage {
-    flex: 0 0 calc(25% - 20px); /* Ajuste a largura das imagens e o espaçamento entre elas conforme necessário */
+  .grid-item img {
+    width: 70%;
+    height: auto;
+    max-height: auto; 
+    margin: 20px;
+}
+
+.title {
     margin: 10px;
-  }
-  
+    text-align: center;
+}

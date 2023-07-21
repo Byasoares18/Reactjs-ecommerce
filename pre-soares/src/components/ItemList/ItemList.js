@@ -1,9 +1,8 @@
-
-
+import React from 'react'
 import './ItemList.css'
 import Item from '../Item/Item'
 import {  } from '../../products/asyncMock'
-import React from 'react'
+
 
 const ItemList = ({ products }) => {
     return(
