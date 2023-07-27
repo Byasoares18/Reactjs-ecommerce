@@ -1,6 +1,6 @@
 import cart from "./assets/cart.png"
-import { useContext } from "react";
-import { CartContext } from '../context/CartContext'
+import React,{ useContext } from "react";
+import { CartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom";
 
 
@@ -26,7 +26,7 @@ const CartWidget = () => {
 
     <img src={cart} style={styles.img} alt="CartWidget" />
     {totalQuantity}
-    <span style={styles.span}>{totalQuantity}</span>
+    <span style={styles.span}>0{totalQuantity}</span>
     </div>
     );
 };

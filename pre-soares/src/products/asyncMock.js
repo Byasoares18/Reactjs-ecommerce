@@ -23,18 +23,18 @@ export const getProductsByCategory = async(category) => {
 };
 
 export const products = [
-    {id: '1',name: 'Product 1',price: 1000,category: 'category2',img: img1,stock: 10,},
-    {id: '2',name: 'Product 2',price: 2000,category: 'category1',img: img2,stock: 5,},
-    {id: '3',name: 'Product 3',price: 1500,category: 'category3',img: img3,stock: 8,},
-    {id: '4',name: 'Product 4',price: 1500,category: 'category4',img: img4,stock: 8,},
-    {id: '5',name: 'Product 5',price: 1500,category: 'category2',img: img5,stock: 8,},
-    {id: '6',name: 'Product 6',price: 1500,category: 'category3',img: img6,stock: 8,},
-    {id: '7',name: 'Product 7',price: 1500,category: 'category1',img: img7,stock: 8,},
-    {id: '8',name: 'Product 8',price: 1500,category: 'category4',img: img8,stock: 8,},
-    {id: '9',name: 'Product 9',price: 1500,category: 'category1',img: img9,stock: 8,},
-    {id: '10',name: 'Product 10',price: 1500,category: 'category2',img: img10,stock: 8,},
-    {id: '11',name: 'Product 11',price: 1500,category: 'category3',img: img11,stock: 8,},
-    {id: '12',name: 'Product 12',price: 1500,category: 'category4',img: img12,stock: 8,},
+    {id: 'o3Eig0Fd9MOvCctpYAuK',name: 'kit cobra anillos',price: 1000,category: 'category2',img: img1,stock: 10},
+    {id: '4nRyIdbisJNflIoGjvFo',name: 'Arito hoja',price: 2000,category: 'category1',img: img2,stock: 5},
+    {id: 'u2OsdidLSCtM1TG32qmk',name: 'Collar Proteccion',price: 1500,category: 'category3',img: img3,stock: 8},
+    {id: 'tpPDHi5jt6asA4u53zZA',name: 'Pulsera pedritas',price: 1500,category: 'category4',img: img4,stock: 8},
+    {id: 'l4niuDzN8d3OdX1v9PjI',name: 'anillos piedra clara',price: 1500,category: 'category2',img: img5,stock: 8},
+    {id: 'rAwF3usggY0TP3he8Nu8',name: 'Collar 3 en 1',price: 1500,category: 'category3',img: img6,stock: 8},
+    {id: 'U4qqkhotUHSGRKLHtnsi',name: 'Aritos Argollitas',price: 1500,category: 'category1',img: img7,stock: 8},
+    {id: 'lYezXtE31SGDc81I3gEq',name: 'Pulsera piedra rosa',price: 1500,category: 'category4',img: img8,stock: 8},
+    {id: 'VmkfGiRi4rWya1NzcSmm',name: 'Arito cristal',price: 1500,category: 'category1',img: img9,stock: 8},
+    {id: 'NpXTiIjkJCoBEWm6cryW',name: 'Kit ojo anillos',price: 1500, category: 'category2',img: img10, stock: 8},
+    {id: 'tgMGizPkIFkYPAvemh8l',name: 'Collar piedrita verde ',price: 1500,category: 'category3',img: img11,stock: 8},
+    {id: 'RVdQ6Zx3GywHvS2txlhy',name: 'Pulsera piedra verde',price: 1500,category: 'category4',img: img12,stock: 8},
 
 
 

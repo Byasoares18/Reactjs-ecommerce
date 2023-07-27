@@ -1,9 +1,9 @@
 import React from "react";
-import ItemCount from "../components/ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
+export const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
   const [quantityAdded, setQuantityAdded] = useState(0);
 
   const handleOnAdd = (quantity) => {

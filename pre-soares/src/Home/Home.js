@@ -1,7 +1,7 @@
 import React from 'react';
-import { products } from '../../products/asyncMock';
+import { products } from '../../src/products/asyncMock';
 import './Home.css';
-import Item from '../Item/Item';
+import Item from '../components/Item/Item';
 
 export function Home () {
   return (
