@@ -1,9 +1,10 @@
-import React from "react";
+
+
+import React, { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
+const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
   const [quantityAdded, setQuantityAdded] = useState(0);
 
   const handleOnAdd = (quantity) => {
@@ -13,6 +14,8 @@ export const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
       id,
       name,
       price,
+      img,
+      stock,
     };
     addItem(item, quantity);
   };
@@ -35,11 +38,7 @@ export const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
             Terminar compra
           </Link>
         ) : (
-          <ItemCount
-            initial={1}
-            stock={stock}
-            onAdd={handleOnAdd} 
-          />
+          <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
         )}
       </footer>
     </article>
@@ -47,3 +46,7 @@ export const ItemDetail = ({ id, name, img, price, stock, addItem }) => {
 };
 
 export default ItemDetail;
+
+
+
+

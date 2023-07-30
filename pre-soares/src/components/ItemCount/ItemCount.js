@@ -1,8 +1,11 @@
 
-import React, { useState } from 'react';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
+
+const ItemCount = ({ stock, initial, item }) => {
   const [quantity, setQuantity] = useState(initial);
+  const { addItem } = useContext(CartContext);
 
   const increment = () => {
     if (quantity < stock) {
@@ -16,23 +19,37 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   };
 
-  const handleAdd = () => {
-    onAdd(quantity);
+  const handleAddToCart = () => {
+    addItem(item, quantity); // Chame a função addItem passando o item completo e a quantidade selecionada
   };
 
   return (
     <div className="Counter">
-      <div className="Controls">
-        <button className="Button" onClick={decrement}>-</button>
-        <h4 className="Number">{quantity}</h4>
-        <button className="Button" onClick={increment}>+</button>
-      </div>
-
-      <button className="Button" onClick={handleAdd} disabled={stock === 0}> Agregar al carrito
-      </button>
-
+      {stock > 0 ? (
+        <>
+          <div className="Controls">
+            <button className="Button" onClick={decrement}>
+              -
+            </button>
+            <h4 className="Number">{quantity}</h4>
+            <button className="Button" onClick={increment}>
+              +
+            </button>
+          </div>
+          <button
+            className="Button"
+            onClick={handleAddToCart} // Chame a função handleAddToCart quando o usuário clicar em "Adicionar ao Carrinho"
+            disabled={quantity === 0}
+          >
+            Adicionar ao Carrinho
+          </button>
+        </>
+      ) : (
+        <p className="OutOfStockMessage">Produto esgotado</p>
+      )}
     </div>
   );
 };
 
 export default ItemCount;
+

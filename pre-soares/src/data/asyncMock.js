@@ -1,15 +1,15 @@
-import img1 from '../products/img1.jpg'
-import img2 from '../products/img2.jpg'
-import img3 from '../products/img3.jpg'
-import img4 from '../products/img4.jpg'
-import img5 from '../products/img5.jpg'
-import img6 from '../products/img6.jpg'
-import img7 from '../products/img7.jpg'
-import img8 from '../products/img8.jpg'
-import img9 from '../products/img9.jpg'
-import img10 from '../products/img10.jpg'
-import img11 from '../products/img11.jpg'
-import img12 from '../products/img12.jpg'
+import img1 from './img1.jpg'
+import img2 from './img2.jpg'
+import img3 from './img3.jpg'
+import img4 from './img4.jpg'
+import img5 from './img5.jpg'
+import img6 from './img6.jpg'
+import img7 from './img7.jpg'
+import img8 from './img8.jpg'
+import img9 from './img9.jpg'
+import img10 from './img10.jpg'
+import img11 from './img11.jpg'
+import img12 from './img12.jpg'
 
 
 
@@ -58,7 +58,7 @@ export const products = [
 export const getAllProducts = async () => {
     try {
     
-    const response = await fetch('http://localhost:3000/products');
+    const response = await fetch('http://localhost:3001/');
     const data = await response.json();
     return data;
     } catch (error) {
@@ -67,4 +67,3 @@ export const getAllProducts = async () => {
 };
 
 
-export default getAllProducts;

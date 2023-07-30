@@ -10,9 +10,11 @@ const CartItem = ({ id, name, img, price, quantity }) => {
         <h3>{name}</h3>
         <p>Price: ${price}</p>
         <p>Quantity: {quantity}</p>
+        <p>Item ID: {id}</p> 
       </div>
     </div>
   );
 };
 
 export default CartItem;
+

@@ -1,10 +1,10 @@
 
-
-import { collection, documentId, Timestamp, writeBatch, getDocs, query, where, addDoc, } from "firebase/firestore";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import CartItem from "../CartItem/CartItem";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import { db } from "../../service/firebase/firebaseConfig"; 
+import { collection, doc,addDoc, getDocs, query, where, writeBatch } from "firebase/firestore";
+import { db } from "../../service/firebase/firebaseConfig";
 
 const Checkout = () => {
   const { cart, total, clearCart } = useContext(CartContext);
@@ -22,32 +22,30 @@ const Checkout = () => {
           email,
         },
         items: cart,
-        total: total,
-        date: Timestamp.fromDate(new Date()),
+        total: total(),
+        date: new Date().toISOString(),
       };
 
       const batch = writeBatch(db);
 
       const outOfStock = [];
 
-      const ids = cart.map(prod => prod.id);
+      const productIds = cart.map((product) => product.id);
 
-      const productsRef = collection(db, 'products');
+      const productsRef = collection(db, 'items');
 
-      const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)));
+      const productsSnapshot = await getDocs(query(productsRef, where(doc('id'), 'in', productIds)));
 
-      const { docs } = productsAddedFromFirestore;
+      productsSnapshot.forEach((doc) => {
+        const productData = doc.data();
+        const stockDb = productData.stock;
 
-      docs.forEach(doc => {
-        const dataDoc = doc.data();
-        const stockDb = dataDoc.stock;
-
-        const productAddedToCart = cart.find(prod => prod.id === doc.id);
-        const prodQuantity = productAddedToCart?.quantity;
-        if (stockDb >= prodQuantity) {
-          batch.update(doc.ref, { stock: stockDb - prodQuantity });
+        const productInCart = cart.find((product) => product.id === doc.id);
+        const cartQuantity = productInCart?.quantity;
+        if (stockDb >= cartQuantity) {
+          batch.update(doc.ref, { stock: stockDb - cartQuantity });
         } else {
-          outOfStock.push({ id: doc.id, ...dataDoc });
+          outOfStock.push({ id: doc.id, ...productData });
         }
       });
 
@@ -55,9 +53,9 @@ const Checkout = () => {
         await batch.commit();
 
         const orderRef = collection(db, 'orders');
-        const orderAdded = await addDoc(orderRef, objOrder);
+        const newOrderRef = await addDoc(orderRef, objOrder);
 
-        setOrderId(orderAdded.id);
+        setOrderId(newOrderRef.id);
         clearCart();
       } else {
         console.error('Hay productos que están fuera de stock');
@@ -80,9 +78,18 @@ const Checkout = () => {
   return (
     <div>
       <h2>Checkout</h2>
+      {cart.map((product) => (
+        <CartItem key={product.id} {...product} />
+      ))}
+      <h3> Total: ${total()}</h3>
+      <button onClick={() => clearCart()} className="Button">
+        Limpiar carrito
+      </button>
       <CheckoutForm onConfirm={createOrder} />
     </div>
   );
 };
 
 export default Checkout;
+
+

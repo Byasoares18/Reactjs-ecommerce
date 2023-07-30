@@ -1,11 +1,55 @@
 .ListGroup {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .CardItem {
-    width: 300px;
-    margin: 10px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.CardItem {
+  width: 250px;
+  height: 70%;
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.CardItem img {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+.CardItem h2 {
+  font-size: 18px;
+  margin: 10px 0 ;
+}
+
+.CardItem p {
+  font-size: 20px;
+  margin: 5px 5px;
+}
+
+.Counter {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+}
+
+.Counter button {
+  background-color: #1480f4;
+  color: #fff;
+  border: none;
+  padding: 2px 8px 8px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Counter h4 {
+  margin: 0 10px;
+  font-size: 18px;
+}
