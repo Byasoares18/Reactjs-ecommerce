@@ -1,8 +1,9 @@
-import car from "./assets/car.png";
+
+
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-
+import car from "./assets/car.png";
 
 const styles = {
   img: {
@@ -16,22 +17,14 @@ const styles = {
 };
 
 const CartWidget = () => {
-  const {  totalQuantity } = useContext(CartContext);
+  const { totalQuantity } = useContext(CartContext);
 
   return (
-    <div>
-      <Link
-        to="/cart"
-        className="CartWidget"
-        style={{ display: totalQuantity() > 0 ? "block" : "none" }}
-      ></Link>
-
+    <Link to="/cart" className="CartWidget">
       <img src={car} style={styles.img} alt="CartWidget" />
-      <span style={styles.span}> {totalQuantity()}</span>
-    </div>
+      <span style={styles.span}> {totalQuantity()} </span>
+    </Link>
   );
 };
 
 export default CartWidget;
-
-

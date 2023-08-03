@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
+
 import { collection, doc,addDoc, getDocs, query, where, writeBatch } from "firebase/firestore";
 import { db } from "../../service/firebase/firebaseConfig";
 
@@ -91,5 +91,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
 

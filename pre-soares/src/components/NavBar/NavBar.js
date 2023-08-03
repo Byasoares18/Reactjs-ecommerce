@@ -2,6 +2,7 @@
 import React from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import { NavLink, Link } from 'react-router-dom';
+import "../NavBar/NavBar.css"
 
 
 const NavBar = () => {
@@ -9,7 +10,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          Venus Platas
+          VENUS PLATAS
         </Link>
         <button
           className="navbar-toggler"
@@ -26,12 +27,12 @@ const NavBar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink to="/" className="nav-link">
-                Home
+                Inicio
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/category/category1" className="nav-link">
-                Aros
+                Aros 
               </NavLink>
             </li>
             <li className="nav-item">
@@ -51,7 +52,8 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <CartWidget />
+         <Link to={'/cart'} className='seeCarrito'>  </Link>   
+         <CartWidget /> 
       </div>
     </nav>
   );

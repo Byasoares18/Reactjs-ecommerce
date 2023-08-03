@@ -3,7 +3,7 @@ import { products } from '../data/asyncMock';
 import './Home.css';
 import Item from '../components/Item/Item';
 
-export function Home () {
+function Home () {
   return (
     <div>
       <h2 className='title'>Todos nuestros productos</h2>
@@ -18,3 +18,4 @@ export function Home () {
   );
 }
 
+export default Home

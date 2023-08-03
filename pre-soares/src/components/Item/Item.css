@@ -1,4 +1,4 @@
-.CardItem{
+/* .CardItem{
     margin: 5rem;
 
 
@@ -8,4 +8,19 @@
     height: 10rem;
     margin: 5rem;
 
+} */
+
+.Detalle {
+    text-decoration: none;
+    background-color: var(--clr-main);
+    color: rgb(61, 10, 156);
+    padding: .5rem;
+    width: max-content;
+    border-radius: .5rem;
+    transition: .2s;
+}
+
+.Detalle:hover {
+    background-color: rgb(26, 164, 218);
+    color: rgb(179, 40, 162);
 }

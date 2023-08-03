@@ -6,7 +6,7 @@
 
 .CardItem {
   width: 250px;
-  height: 70%;
+  height: 100%;
   margin: 5px;
   padding: 8px;
   border: 1px solid #ccc;
@@ -32,14 +32,16 @@
   margin: 5px 5px;
 }
 
-.Counter {
+ .Counter {
+  
   display: flex;
-  align-items: center;
-  padding: 1px;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .Counter button {
-  background-color: #1480f4;
+  background-color: #1480f4b5;
   color: #fff;
   border: none;
   padding: 2px 8px 8px;
@@ -47,9 +49,13 @@
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+    text-align: center;
+    line-height: 1;
 }
 
 .Counter h4 {
   margin: 0 10px;
   font-size: 18px;
-}
+} 

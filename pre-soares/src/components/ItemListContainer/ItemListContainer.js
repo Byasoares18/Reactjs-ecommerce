@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { getAllProducts, getProductsByCategory } from "../../data/asyncMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import Cart from "../cart/Cart";
@@ -16,25 +15,10 @@ const ItemListContainer = ({ greeting }) => {
   useEffect(() => {
     setLoading(true);
 
-    const asyncFunc = categoryId ? getProductsByCategory : getAllProducts;
-
-    asyncFunc(categoryId)
-      .then((response) => {
-        setProducts(response);
-        setLoading(false); // Add this line to set loading to false after fetching data
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false); // Add this line to set loading to false in case of an error
-      });
-  }, [categoryId]);
-
-  useEffect(() => {
-    setLoading(true);
-
+    
     const collectionRef = categoryId
-      ? query(collection(db, "products"), where("category", "==", categoryId))
-      : collection(db, "products");
+    ?query(collection(db, 'items'), where('category', '==', categoryId))
+    : collection(db,'items')
 
     getDocs(collectionRef)
       .then((response) => {
@@ -42,13 +26,17 @@ const ItemListContainer = ({ greeting }) => {
           const data = doc.data();
           return { id: doc.id, ...data };
         });
+  
         setProducts(productsAdapted);
-        setLoading(false); // Add this line to set loading to false after fetching data
+        
       })
       .catch((error) => {
         console.log(error);
-        setLoading(false); // Add this line to set loading to false in case of an error
-      });
+        
+      })
+      .finally(()=>{
+        setLoading(false)
+      })
   }, [categoryId]);
 
   return (

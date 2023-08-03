@@ -41,11 +41,11 @@ const ItemCount = ({ stock, initial, item }) => {
             onClick={handleAddToCart} // Chame a função handleAddToCart quando o usuário clicar em "Adicionar ao Carrinho"
             disabled={quantity === 0}
           >
-            Adicionar ao Carrinho
+            Agregar al Carrito
           </button>
         </>
       ) : (
-        <p className="OutOfStockMessage">Produto esgotado</p>
+        <p className="OutOfStockMessage">Producto agotado</p>
       )}
     </div>
   );

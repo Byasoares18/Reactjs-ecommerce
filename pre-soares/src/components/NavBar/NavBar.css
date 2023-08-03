@@ -1,0 +1,36 @@
+
+.navbar {
+    background-color: #0b1d3ade;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: #86baee;
+   margin-left: 10px;
+  }
+  
+  .navbar-nav {
+    margin-right: auto;
+  }
+  
+  .nav-item {
+    margin-right: 8px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #605d5d;
+  }
+  
+  
+  .nav-link.active {
+    background-color: #93d5ef5e; 
+    color: #d1dae8; 
+    border-radius: 4px;
+    padding: 8px 12px;
+  }
+  .navbar-collapse {
+    margin-left: auto;
+}

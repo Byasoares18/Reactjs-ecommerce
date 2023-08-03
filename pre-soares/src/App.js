@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import NotFound  from './components/NotFound/NotFound';
-import { Home } from '../src/Home/Home';
+import  Home  from '../src/Home/Home';
 import Cart from './components/cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 
@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
-            <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+            <Route path='/item/:itemId' element={<ItemDetailContainer/>} />
             <Route path='/cart' element={<Cart />} />
             <Route path="/addproducts" component={AddProducts} />
             <Route path='/checkout' element={<Checkout />} />

@@ -1,34 +1,14 @@
-  
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../service/firebase/firebaseConfig';
+import { CartContext } from '../../context/CartContext';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
   const { itemId } = useParams();
-
-  const addItem = (item, quantity) => {
-    if (item.stock >= quantity) {
-      const itemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
-
-      if (itemInCart) {
-        const updatedCartItems = cartItems.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + quantity } : cartItem
-        );
-        setCartItems(updatedCartItems);
-      } else {
-        setCartItems([...cartItems, { ...item, quantity }]);
-      }
-
-      console.log('Item adicionado ao carrinho:', item, 'quantidade:', quantity);
-    } else {
-      console.log('Quantidade solicitada indisponível em estoque.');
-    }
-  };
+  const { addItem } = useContext(CartContext);
 
   useEffect(() => {
     const docRef = doc(db, 'items', itemId);
@@ -50,17 +30,15 @@ const ItemDetailContainer = () => {
 
   return (
     <div className='ItemDetailContainer'>
-      <ItemDetail
-        id={product.id}
-        name={product.name}
-        img={product.img}
-        price={product.price}
-        stock={product.stock}
-        addItem={addItem}
-      />
-      
+      {product.stock > 0 ? (
+         <ItemDetail product={product} addItem={addItem} />
+         
+      ) : (
+        <p>Producto agotado</p>
+      )}
     </div>
   );
 };
 
 export default ItemDetailContainer;
+
